@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_profile/profile.dart';
-import 'package:personal_profile/profile_edit_page.dart';
+
+import 'profile.dart';
+import 'profile_edit_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
