@@ -1,7 +1,10 @@
+import 'package:baitap5_version1/profile.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  final Profile profile;
+
+  const ProfilePage({super.key, required this.profile});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -19,9 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 15
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.end,
@@ -39,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
               style: TextStyle(fontSize: 17),
             ),
             Text(
-              'Cao Minh Tiến',
+              widget.profile.hoTen,
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -48,16 +49,21 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 15),
             const Text('Ngày sinh', style: TextStyle(fontSize: 17)),
-            const Text('19/05/2001', style: TextStyle(fontSize: 17)),
+            Text(_formatDate(widget.profile.ngaySinh),
+                style: const TextStyle(fontSize: 17)),
             const SizedBox(height: 15),
             const Text('Quê quán', style: TextStyle(fontSize: 17)),
-            const Text('Nha Trang', style: TextStyle(fontSize: 17)),
+            Text(widget.profile.queQuan, style: const TextStyle(fontSize: 17)),
             const SizedBox(height: 15),
             const Text('Sở thích', style: TextStyle(fontSize: 17)),
-            const Text('Ca nhạc', style: TextStyle(fontSize: 17))
+            Text(widget.profile.soThich, style: const TextStyle(fontSize: 17))
           ],
         ),
       ),
     );
+  }
+
+  String _formatDate(DateTime date) {
+    return '${date.day}/${date.month}/${date.year}';
   }
 }

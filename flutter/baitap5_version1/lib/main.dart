@@ -1,12 +1,12 @@
-import 'package:baitap5_version1/profile_page.dart';
+import 'package:baitap5_version1/profile_pref_set_state_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PreferenceSetStateApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PreferenceSetStateApp extends StatelessWidget {
+  const PreferenceSetStateApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ProfilePage()
+      home: const ProfilePreferenceSetStatePage()
     );
   }
 }
