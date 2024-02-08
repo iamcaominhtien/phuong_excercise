@@ -3,12 +3,12 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Flutter
 
 on:
   push:
-    paths:
-      - 'flutter/**'
+    # paths:
+    #   - 'flutter/**'
     branches: [ "main" ]
   pull_request:
     paths:
