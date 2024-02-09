@@ -24,7 +24,7 @@ jobs:
           cd flutter/all_projects
           flutter build web
       - run: |
-          cd build/web
+          cd flutter/all_projects/build/web
           git init
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email iamcaominhtien@gmail.com 
