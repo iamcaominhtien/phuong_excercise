@@ -6,14 +6,14 @@ on:
 jobs:
   build:
     name: Build Web
-    # env:
-      # my_secret: ${{secrets.TOKEN_GIT}}
+    env:
+      my_secret: ${{secrets.TOKEN_GIT}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'dev'
+          channel: 'stable'
       - run: flutter config --enable-web
       - name: Download Dependencies
         run: |
