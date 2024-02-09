@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: |
           cd flutter/all_projects
-          flutter build web
+          flutter build web --release
       - run: |
           cd flutter/all_projects/build/web
           git config --global init.defaultBranch
