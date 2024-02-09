@@ -27,13 +27,11 @@ jobs:
         run: |
           sed -i 's|<base href="/">|<base href=".">|g' flutter/all_projects/build/web/index.html
           cat flutter/all_projects/build/web/index.html
-      - run: |
+      - name: Deploy to Github Pages
+        run: |
           cd flutter/all_projects/build/web
-          git config --global init.defaultBranch
           git init
-          # type configurations: your user.email and user.name followed lines 
-          # git config --global user.email iamcaominhtien@gmail.com 
-          # git config --global user.name iamcaominhtien 
+          git config --global init.defaultBranch
           git config --global user.email iamcaominhtien@gmail.com
           git config --global user.name iamcaominhtien
           git status
@@ -41,5 +39,4 @@ jobs:
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
-          git config --list
-          git push origin gh-pages
+          git push origin gh-pages -f
