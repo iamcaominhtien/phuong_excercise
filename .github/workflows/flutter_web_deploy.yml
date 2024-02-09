@@ -6,8 +6,8 @@ on:
 jobs:
   build:
     name: Build Web
-    env:
-      my_secret: ${{secrets.TOKEN_GIT}}
+    # env:
+      # my_secret: ${{secrets.TOKEN_GIT}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +25,6 @@ jobs:
           flutter build web --release
       - run: |
           cd flutter/all_projects/build/web
-          git config --global init.defaultBranch 
           git init
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email iamcaominhtien@gmail.com 
@@ -34,7 +33,7 @@ jobs:
           git config --global user.name iamcaominhtien
           git status
           # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
-          git remote add origin https://github.com/iamcaominhtien/phuong_excercise.git
+          git remote add origin https://${{secrets.TOKEN_GIT}}@github.com/iamcaominhtien/phuong_excercise.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
