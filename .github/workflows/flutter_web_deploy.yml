@@ -31,7 +31,7 @@ jobs:
         run: |
           cd flutter/all_projects/build/web
           git init
-          git config --global init.defaultBranch
+          git config --global init.defaultBranch main
           git config --global user.email iamcaominhtien@gmail.com
           git config --global user.name iamcaominhtien
           git status
