@@ -26,7 +26,6 @@ jobs:
       - name: Update index.html
         run: |
           sed -i 's|<base href="/">|<base href=".">|g' flutter/all_projects/build/web/index.html
-          cat flutter/all_projects/build/web/index.html
       - name: Deploy to Github Pages
         run: |
           cd flutter/all_projects/build/web
