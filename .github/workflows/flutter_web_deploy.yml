@@ -24,6 +24,7 @@ jobs:
           cd flutter/all_projects
           flutter build web --release
       - name: Update index.html
+        run: |
           cd flutter/all_projects/build/web
           sed -i 's|<base href="/">|<base href=".">|g' index.html
       - run: |
