@@ -24,6 +24,9 @@
       <excludeFolder url="file://$MODULE_DIR$/flutter/baitap5_version3/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/flutter/baitap5_version3/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/flutter/baitap5_version3/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter/all_projects/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter/all_projects/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter/all_projects/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
