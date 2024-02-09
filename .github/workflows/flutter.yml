@@ -6,10 +6,10 @@
 name: Flutter
 
 on:
-  push:
+  # push:
     # paths:
     #   - 'flutter/**'
-    branches: [ "main" ]
+    # branches: [ "main" ]
   pull_request:
     paths:
       - 'flutter/**'
