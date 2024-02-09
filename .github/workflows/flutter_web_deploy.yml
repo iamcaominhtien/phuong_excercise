@@ -25,7 +25,7 @@ jobs:
           flutter build web --release
       - run: |
           cd flutter/all_projects/build/web
-          git config --global init.defaultBranch main
+          git config --global init.defaultBranch 
           git init
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email iamcaominhtien@gmail.com 
