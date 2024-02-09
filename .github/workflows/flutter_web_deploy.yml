@@ -1,7 +1,10 @@
 name: Flutter Web
 on:
   push:
-    branches: []
+    branches: 
+      - main
+    paths:
+      - 'flutter/all_projects/**'
 jobs:
   build:
     name: Build Web
