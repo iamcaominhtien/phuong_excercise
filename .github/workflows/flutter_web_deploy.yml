@@ -1,0 +1,40 @@
+name: Flutter Web
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.TOKEN_GIT}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - run: flutter config --enable-web
+      - name: Download Dependencies
+        run: |
+          cd flutter/all_projects
+          flutter pub get
+      - name: Build
+        run: |
+          cd flutter/all_projects
+          flutter build web
+      - run: |
+          cd build/web
+          git init
+          # type configurations: your user.email and user.name followed lines 
+          # git config --global user.email iamcaominhtien@gmail.com 
+          # git config --global user.name iamcaominhtien 
+          git config --global user.email iamcaominhtien@gmail.com
+          git config --global user.name iamcaominhtien
+          git status
+          # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
+          git remote add origin https://${{secrets.commit_secret}}@github.com/onatcipli/https://github.com/iamcaominhtien/phuong_excercise
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
